@@ -24,7 +24,7 @@ const preguntas= [
             },
             {
                 value:'4',
-                name: `${'4.'.green} Listar tareas pendiaentes`
+                name: `${'4.'.green} Listar tareas pendientes`
             },
             {
                 value:'5',
