@@ -84,18 +84,9 @@ Tareas-por-hacer/
 
 ## 📸 Captura de Pantalla
 
-```
-============================
-   Seleccione una opción
-============================
-? ¿Qué desea hacer? (Use arrow keys)
-❯ 1. Crear tarea
-  2. Listar tareas
-  3. Listar tareas completadas
-  4. Listar tareas pendientes
-  5. Completar tareas
-  6. Borrar tarea
-  0. Salir
+![image](https://github.com/user-attachments/assets/c0fc2e2b-f598-4b4f-95bd-015689f05143)
+
+
 ```
 
 ---
