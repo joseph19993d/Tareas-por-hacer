@@ -42,24 +42,50 @@ class Tareas {
     for (let i = 0; i < this.listadoArr.length; i++) {
       const tarea = this.listadoArr[i];
       const completada = !!tarea.completadoEn;
-
       if (completada === completadas) {
         contador++;
         console.log(
-          `${contador.toString().green}. ${tarea.desc} :: ${
-            completada ? "Completada".green : "Pendiente".red
+
+          `${contador.toString().green}. ${tarea.desc} :: ${completada ? "Completada".green : "Pendiente".red
           }`
         );
       }
     }
   }
 
-  borrarTarea(id=''){
-    if(this._listado[id]){
-        delete this._listado[id];
+  /**
+   * Borra una tarea del listado por su ID
+   * @param {string} id - ID de la tarea a borrar
+   * @return {void}
+   * * Si el ID no existe, no hace nada
+   * * Si el ID existe, lo elimina del listado
+   *  */
+  borrarTarea(id = '') {
+    if (this._listado[id]) {
+      delete this._listado[id];
     }
   }
 
+  /** 
+  * Marcar como completadas las tareas con id en el arreglo,
+  * Marcar como pendientes todas las tareas que no están en el arreglo
+  * @param {Array} ids - Array de IDs de tareas a marcar como completadas
+  */
+  marcarCompletadasPendientes(ids = []) {
+    // 1. Marcar como completadas las tareas con id en el arreglo
+    ids.forEach((id) => {
+      if (!this._listado[id].completadoEn) {
+        this._listado[id].completadoEn = new Date().toISOString();
+      }
+    });
+
+    // 2. Marcar como pendientes todas las tareas que no están en el arreglo
+    this.listadoArr.forEach((tarea) => {
+      if (!ids.includes(tarea.id)) {
+        this._listado[tarea.id].completadoEn = null;
+      }
+    });
+  }
 
 }
 
