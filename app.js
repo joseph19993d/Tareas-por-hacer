@@ -5,6 +5,7 @@ const {
   validateInput,
   listadoTareasBorrar,
   confirmar,
+  selecionDeTareas,
 } = require("./helpers/inquirer");
 const Tareas = require("./models/tareas");
 const { guardarDB, leerDB } = require("./helpers/guardarArchivo");
@@ -31,14 +32,25 @@ const main = async () => {
       case "2":
         //listado de tareas [ARRARY]
         console.log(tareas.listadoArr);
+
         break;
       case "3":
         tareas.listarPendiantesCompletadas(true);
+
         break;
       case "4":
         tareas.listarPendiantesCompletadas(false);
         break;
+      case "5":
+        const ids =  await selecionDeTareas(tareas.listadoArr);
+        if (ids.length > 0) {
+          tareas.marcarCompletadasPendientes(ids);
+          console.log("Tareas completadas");
+        } else {
+          console.log("No se seleccionaron tareas");
+        }
 
+        break;
       case "6":
         const id = await listadoTareasBorrar(tareas.listadoArr);
         const ok = await confirmar("¿estas seguro?");
