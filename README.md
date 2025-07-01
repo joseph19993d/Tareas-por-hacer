@@ -86,9 +86,6 @@ Tareas-por-hacer/
 
 ![image](https://github.com/user-attachments/assets/c0fc2e2b-f598-4b4f-95bd-015689f05143)
 
-
-```
-
 ---
 
 ## 👨‍💻 Autor
