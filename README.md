@@ -92,9 +92,3 @@ Tareas-por-hacer/
 
 - **Joseph Rodelo**  
   GitHub: [@joseph19993d](https://github.com/joseph19993d)
-  
----
-
-## 📄 Licencia
-
-Este proyecto está licenciado bajo la IMC.
